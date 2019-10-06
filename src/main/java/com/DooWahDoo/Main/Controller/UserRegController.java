@@ -1,8 +1,12 @@
 package com.DooWahDoo.Main.Controller;
 
+import java.util.List;
+import java.util.Optional;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -34,6 +38,34 @@ public class UserRegController {
 		return userRegRepo.save(signUp1);
 		
 	
+    }
+	
+	@GetMapping("/login")
+    public String userLogin(@Valid @RequestBody SignUp signUp) {
+		String status;
+
+		Optional<SignUp> user=userRegRepo.findById(signUp.getEmailId());
+
+		if(user.isPresent())
+		{
+			if(user.get().getPassword().equals(signUp.getPassword()))
+			{
+				System.out.println("match found");
+				status="Success";
+			}
+			else
+			{
+				System.out.println("wrong combination");
+				status="Fail";
+			}
+			
+		}
+		else
+		{
+			System.out.println("No such user");
+			status = "Fail";
+		}
+		return status;
     }
 
 }
