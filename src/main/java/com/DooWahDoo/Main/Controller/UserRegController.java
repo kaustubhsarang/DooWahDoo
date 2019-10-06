@@ -39,6 +39,11 @@ public class UserRegController {
 		
 	
     }
+	@GetMapping("/test")
+	public String test()
+	{
+		return "I'm running";
+	}
 	
 	@GetMapping("/login")
     public String userLogin(@Valid @RequestBody SignUp signUp) {
