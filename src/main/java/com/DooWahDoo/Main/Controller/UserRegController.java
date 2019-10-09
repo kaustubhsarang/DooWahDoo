@@ -1,11 +1,13 @@
 package com.DooWahDoo.Main.Controller;
 
 import java.util.List;
+
 import java.util.Optional;
 
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,6 +20,7 @@ import com.DooWahDoo.Main.Model.SignUpProfileWrapper;
 import com.DooWahDoo.Main.Model.UserProfile;
 import com.DooWahDoo.Main.Repo.UserProfileRepo;
 import com.DooWahDoo.Main.Repo.UserRegRepo;
+@CrossOrigin
 @RestController
 @RequestMapping("/api/v1")
 public class UserRegController {
@@ -45,7 +48,7 @@ public class UserRegController {
 		return "I'm running";
 	}
 	
-	@GetMapping("/login")
+	@PostMapping("/login")
     public String userLogin(@Valid @RequestBody SignUp signUp) {
 		String status;
 
