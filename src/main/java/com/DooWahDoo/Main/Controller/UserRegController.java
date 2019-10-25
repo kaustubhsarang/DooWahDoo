@@ -30,7 +30,7 @@ public class UserRegController {
 	@Autowired
 	private UserProfileRepo userProfileRepo;
 	
-	@PostMapping("/employees")
+	@PostMapping("/RegisterUser")
 //   public SignUp createEmployee(@Valid @RequestBody SignUp signUp) {
 	 public SignUp createEmployee(@Valid @RequestBody SignUpProfileWrapper signUpProfileWrapper) {
 		UserProfile userProfile1=signUpProfileWrapper.getUserProfile();
