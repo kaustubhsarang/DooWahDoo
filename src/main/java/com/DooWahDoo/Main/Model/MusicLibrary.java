@@ -12,7 +12,14 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
+import org.hibernate.search.annotations.Analyze;
+import org.hibernate.search.annotations.Field;
+import org.hibernate.search.annotations.Index;
+import org.hibernate.search.annotations.Indexed;
+import org.hibernate.search.annotations.Store;
+
 @Entity
+@Indexed
 @Table(name = "music_library")
 public class MusicLibrary {
 	
@@ -22,12 +29,15 @@ public class MusicLibrary {
 	private long musicId;
 	
 	@Column(name = "title")
+	@Field(index=Index.YES, analyze=Analyze.YES, store=Store.NO)
 	private String title;
 	
 	@Column(name = "genre")
+	@Field(index=Index.YES, analyze=Analyze.YES, store=Store.NO)
 	private String genre;
 	
 	@Column(name = "artist")
+	@Field(index=Index.YES, analyze=Analyze.YES, store=Store.NO)
 	private String artist;
 	
 	@Column(name = "duration")
