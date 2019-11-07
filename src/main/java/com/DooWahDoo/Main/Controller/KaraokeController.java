@@ -12,32 +12,31 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.DooWahDoo.Main.Model.KaraokeSession;
-import com.DooWahDoo.Main.Repo.KaraokeRepo;
+import com.DooWahDoo.Main.Service.KaraokeService;
 
 @CrossOrigin
 @RestController
 @RequestMapping("/Karaoke")
 public class KaraokeController {
-	
+
 	@Autowired
-	private KaraokeRepo karaokeRepo;
-	
+	KaraokeService karaokeservice;
+
 	@PostMapping("/createSession")
-	public KaraokeSession createSession(@Valid @RequestBody KaraokeSession karaokeSession)
-	{
-		return karaokeRepo.save(karaokeSession);
+	public KaraokeSession createSession(@Valid @RequestBody String userId, String musicId, String gigId) {
+		return karaokeservice.createKaraokeSession(userId, musicId, gigId);
+
 	}
-	
-	@PostMapping("/getSessions")
-	public List<KaraokeSession> getSessions()
-	{
-		return karaokeRepo.findAll();
+
+	@PostMapping("/getUserQueue")
+	public List<KaraokeSession> getSessions() {
+		return karaokeservice.getUsers();
+		 
 	}
-	
-	@PostMapping("/deleteSession")
-	public void deleteSession(@Valid @RequestBody KaraokeSession karaokeSession)
-	{
-		 karaokeRepo.delete(karaokeSession);
-	}
+
+//	@PostMapping("/deleteSession")
+//	public void deleteSession(@Valid @RequestBody KaraokeSession karaokeSession) {
+//		karaokeRepo.delete(karaokeSession);
+//	}
 
 }
