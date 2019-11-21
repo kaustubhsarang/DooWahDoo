@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.DooWahDoo.Main.Model.KaraokeSession;
+import com.DooWahDoo.Main.Model.UserQueueDetails;
 import com.DooWahDoo.Main.Service.KaraokeService;
 
 @CrossOrigin
@@ -35,16 +36,23 @@ public class KaraokeController {
 	}
 
 	@GetMapping("/getUserQueue")
-	public List<KaraokeSession> getSessions() {
+	public List<UserQueueDetails> getSessions() {
 		return karaokeservice.getUsers();
 
 	}
 
 	@GetMapping("/gig/{gigId}/getUserQueue")
-	public List<KaraokeSession> getSessions(@PathVariable("gigId") long gigId) {
+	public List<UserQueueDetails> getSessions(@PathVariable("gigId") long gigId) {
 		// Implement logic for GigID in future
 		// Currently Out of Scope
 		return karaokeservice.getUsers();
+	}
+	
+	@GetMapping("/gig/{gigId}/getCurrentUserQueue")
+	public UserQueueDetails get(@PathVariable("gigId") long gigId) {
+		// Implement logic for GigID in future
+		// Currently Out of Scope
+		return karaokeservice.getCurrentUser();
 
 	}
 
