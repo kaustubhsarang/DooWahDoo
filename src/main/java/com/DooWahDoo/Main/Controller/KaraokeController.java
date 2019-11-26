@@ -2,6 +2,7 @@ package com.DooWahDoo.Main.Controller;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 import javax.validation.Valid;
 
@@ -47,22 +48,26 @@ public class KaraokeController {
 		// Currently Out of Scope
 		return karaokeservice.getUsers();
 	}
-	
+
 	@GetMapping("/gig/{gigId}/getCurrentUserQueue")
-	public UserQueueDetails get(@PathVariable("gigId") long gigId) {
+	public UserQueueDetails getCurrentUser(@PathVariable("gigId") long gigId) {
 		// Implement logic for GigID in future
 		// Currently Out of Scope
 		return karaokeservice.getCurrentUser();
 
 	}
-	
+
 	@GetMapping("/gig/{gigId}/{userId}/getTimer")
-	public String Timer(@PathVariable("userId") long userId)
-	{
-		
+	public String Timer(@PathVariable("userId") long userId) {
+
 		return karaokeservice.getRemainingTime(userId);
 	}
 
+	@GetMapping("/sessionId/{sessionId}/getSeesionDetailsById/")
+	public Optional<KaraokeSession> getSessionDetailsById(@PathVariable("sessionId") long sessionId) {
+		return karaokeservice.getSessionDetailsById(sessionId);
+
+	}
 //	@PostMapping("/deleteSession")
 //	public void deleteSession(@Valid @RequestBody KaraokeSession karaokeSession) {
 //		karaokeRepo.delete(karaokeSession);

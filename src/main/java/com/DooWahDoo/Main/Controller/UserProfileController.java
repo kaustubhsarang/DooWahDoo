@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.DooWahDoo.Main.Model.UserProfile;
+import com.DooWahDoo.Main.Service.UserProfileService;
 
 @CrossOrigin
 @RestController
