@@ -18,13 +18,19 @@ public class UserRegisterService {
 	@Autowired
 	private UserRegRepo userRegRepo;
 
-	public SignUp createUser(SignUpProfileWrapper signUpProfileWrapper) {
-		UserProfile userProfile1 = signUpProfileWrapper.getUserProfile();
-		SignUp signUp1 = signUpProfileWrapper.getSignUp();
-		userProfileRepo.save(userProfile1);
+	@Autowired
+	private SendEmailService emailService;
 
-		signUp1.setUserProfile(userProfile1);
-		return userRegRepo.save(signUp1);
+	private final String BODY_TEXT = "";
+	private final String SUBJECT_TEXT = "";
+
+	public SignUp createUser(SignUpProfileWrapper signUpProfileWrapper) {
+		UserProfile userProfile = signUpProfileWrapper.getUserProfile();
+		SignUp signUp = signUpProfileWrapper.getSignUp();
+		userProfileRepo.save(userProfile);
+		signUp.setUserProfile(userProfile);
+		emailService.sendEmail(signUp.getEmailId(), BODY_TEXT, SUBJECT_TEXT);
+		return userRegRepo.save(signUp);
 	}
 
 }

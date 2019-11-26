@@ -40,10 +40,6 @@ public class UserProfile {
 	@NotNull
 	private long contactNo;
 	
-	@Column(name = "user_name")
-	@NotNull
-	private String userName;
-	
 	@Column(name = "dob")
 	private java.sql.Date dob;
 	
@@ -96,14 +92,6 @@ public class UserProfile {
 
 	public void setContactNo(long contactNo) {
 		this.contactNo = contactNo;
-	}
-
-	public String getUserName() {
-		return userName;
-	}
-
-	public void setUserName(String userName) {
-		this.userName = userName;
 	}
 
 	public java.sql.Date getDob() {
