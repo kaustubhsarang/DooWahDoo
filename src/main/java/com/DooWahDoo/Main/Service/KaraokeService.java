@@ -60,6 +60,43 @@ public class KaraokeService {
 		return queueList;
 
 	}
+	
+	public String getRemainingTime(long userId)
+	{
+		List<KaraokeSession> sessions = karaokeRepo.findAll();
+		List<UserQueueDetails> queueList = new ArrayList<>();
+		int time=0;
+		String res;
+		for(KaraokeSession session: sessions)
+		{
+			
+			if (!session.isDone() && !session.isCurrent() && session.getUserProfile().getUserId()!=userId) {
+				time=time+session.getMusicLibrary().getDuration();
+			}
+
+			
+		}
+		res=getTime(time);
+		return res;
+	}
+	
+	public String getTime(int time)
+	{
+		int hr = time/60;
+		int b = 60*hr;
+		int min = time - b;
+		String time1;
+		if(time>=60)
+		{
+		time1 = Integer.toString(hr)+" hour "+Integer.toString(min)+" minutes";
+		}
+		else
+		{
+		time1 = Integer.toString(min)+" minutes";
+		}
+		
+		return time1;
+	}
 
 	public UserQueueDetails getCurrentUser() {
 		List<KaraokeSession> sessions = karaokeRepo.findAll();
@@ -86,5 +123,7 @@ public class KaraokeService {
 		return idList;
 
 	}
+	
+
 
 }

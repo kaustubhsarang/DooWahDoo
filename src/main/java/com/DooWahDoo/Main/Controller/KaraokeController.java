@@ -55,6 +55,13 @@ public class KaraokeController {
 		return karaokeservice.getCurrentUser();
 
 	}
+	
+	@GetMapping("/gig/{gigId}/{userId}/getTimer")
+	public String Timer(@PathVariable("userId") long userId)
+	{
+		
+		return karaokeservice.getRemainingTime(userId);
+	}
 
 //	@PostMapping("/deleteSession")
 //	public void deleteSession(@Valid @RequestBody KaraokeSession karaokeSession) {
