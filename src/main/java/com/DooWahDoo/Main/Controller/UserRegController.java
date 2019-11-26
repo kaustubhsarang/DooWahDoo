@@ -1,7 +1,8 @@
 package com.DooWahDoo.Main.Controller;
 
+import java.util.HashMap;
 import java.util.List;
-
+import java.util.Map;
 import java.util.Optional;
 
 import javax.validation.Valid;
@@ -20,6 +21,7 @@ import com.DooWahDoo.Main.Model.SignUpProfileWrapper;
 import com.DooWahDoo.Main.Model.UserProfile;
 import com.DooWahDoo.Main.Repo.UserProfileRepo;
 import com.DooWahDoo.Main.Repo.UserRegRepo;
+import com.google.gson.JsonObject;
 @CrossOrigin
 @RestController
 @RequestMapping("/api/v1")
@@ -49,31 +51,29 @@ public class UserRegController {
 	}
 	
 	@PostMapping("/login")
-    public String userLogin(@Valid @RequestBody SignUp signUp) {
-		String status;
-
+    public Map<String, Object> userLogin(@Valid @RequestBody SignUp signUp) {
 		Optional<SignUp> user=userRegRepo.findById(signUp.getEmailId());
-
+		Map<String,Object> result = new HashMap<>();
 		if(user.isPresent())
 		{
 			if(user.get().getPassword().equals(signUp.getPassword()))
 			{
-				System.out.println("match found");
-				status="Success";
+				result.put("Status", "Success");
+				result.put("userInfo", user);
 			}
 			else
 			{
-				System.out.println("wrong combination");
-				status="Fail";
+				result.put("Status", "Wrong Password");
+				result.put("userInfo", null);
 			}
 			
 		}
 		else
 		{
-			System.out.println("No such user");
-			status = "Fail";
+			result.put("Status", "No such user");
+			result.put("userInfo", null);
 		}
-		return status;
+		return result;
     }
 
 }

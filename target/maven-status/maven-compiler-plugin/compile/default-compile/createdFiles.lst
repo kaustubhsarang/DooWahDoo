@@ -1,6 +1,9 @@
+com\DooWahDoo\Main\Controller\MusicSearchController.class
+com\DooWahDoo\Main\Service\KaraokeService.class
 com\DooWahDoo\Main\Controller\KaraokeController.class
 com\DooWahDoo\Main\Model\SignUpProfileWrapper.class
 com\DooWahDoo\Main\DooWahDooApplication.class
+com\DooWahDoo\Main\Service\MusicSearchService.class
 com\DooWahDoo\Main\Model\DjProfile.class
 com\DooWahDoo\Main\Repo\DjRepo.class
 com\DooWahDoo\Main\SearchSong\MusicSearch.class
@@ -16,6 +19,8 @@ com\DooWahDoo\Main\Model\UserProfile.class
 com\DooWahDoo\Main\Controller\AddressController.class
 com\DooWahDoo\Main\Repo\MusicLibRepo.class
 com\DooWahDoo\Main\Model\SignUp.class
+com\DooWahDoo\Main\SearchSong\InitHibernateSearch.class
+com\DooWahDoo\Main\Controller\UserProfileService.class
 com\DooWahDoo\Main\Controller\UserProfileController.class
 com\DooWahDoo\Main\Model\GigInfo.class
 com\DooWahDoo\Main\Model\KaraokeSession.class

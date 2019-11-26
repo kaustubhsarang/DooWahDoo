@@ -1,16 +1,11 @@
 package com.DooWahDoo.Main.Model;
 
-import java.util.List;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
 
 import org.hibernate.search.annotations.Analyze;
 import org.hibernate.search.annotations.Field;
@@ -46,8 +41,8 @@ public class MusicLibrary {
 	@Column(name = "description")
 	private String description;
 	
-	@OneToMany(mappedBy = "musicLibrary",cascade = CascadeType.ALL)
-	private List<KaraokeSession> karaokeSessions;
+//	@OneToMany(mappedBy = "musicLibrary",cascade = CascadeType.ALL)
+//	private List<KaraokeSession> karaokeSessions;
 
 	public long getMusicId() {
 		return musicId;
@@ -96,14 +91,14 @@ public class MusicLibrary {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-
-	public List<KaraokeSession> getKaraokeSessions() {
-		return karaokeSessions;
-	}
-
-	public void setKaraokeSessions(List<KaraokeSession> karaokeSessions) {
-		this.karaokeSessions = karaokeSessions;
-	}
+//
+//	public List<KaraokeSession> getKaraokeSessions() {
+//		return karaokeSessions;
+//	}
+//
+//	public void setKaraokeSessions(List<KaraokeSession> karaokeSessions) {
+//		this.karaokeSessions = karaokeSessions;
+//	}
 	
 	
 

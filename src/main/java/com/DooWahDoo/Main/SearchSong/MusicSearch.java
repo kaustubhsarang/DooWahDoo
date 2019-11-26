@@ -1,7 +1,6 @@
 package com.DooWahDoo.Main.SearchSong;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 import javax.persistence.EntityManager;

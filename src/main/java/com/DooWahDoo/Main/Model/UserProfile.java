@@ -2,9 +2,7 @@ package com.DooWahDoo.Main.Model;
 
 
 import java.sql.Blob;
-import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,15 +10,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
-import org.apache.tomcat.jni.Address;
 import org.hibernate.annotations.NotFound;
 import org.hibernate.annotations.NotFoundAction;
-import org.springframework.data.annotation.Transient;
 
 @Entity
 @Table(name = "user_profile")
@@ -57,11 +51,11 @@ public class UserProfile {
 	@JoinColumn(name="address_id")
 	private AddressDetails addressDetails;
 	
-	@OneToMany(mappedBy = "userProfile",cascade = CascadeType.ALL)
-	private List<KaraokeSession> karaokeSessions;
+//	@OneToMany(mappedBy = "userProfile",cascade = CascadeType.ALL)
+//	private List<KaraokeSession> karaokeSessions;
 	
-	@OneToOne(mappedBy = "userProfile",cascade = CascadeType.ALL)
-	private SignUp signUp;
+//	@OneToOne(mappedBy = "userProfile",cascade = CascadeType.ALL)
+//	private SignUp signUp;
 
 	public long getUserId() {
 		return userId;
@@ -127,21 +121,21 @@ public class UserProfile {
 		this.addressDetails = addressDetails;
 	}
 
-	public List<KaraokeSession> getKaraokeSessions() {
-		return karaokeSessions;
-	}
+//	public List<KaraokeSession> getKaraokeSessions() {
+//		return karaokeSessions;
+//	}
+//
+//	public void setKaraokeSessions(List<KaraokeSession> karaokeSessions) {
+//		this.karaokeSessions = karaokeSessions;
+//	}
 
-	public void setKaraokeSessions(List<KaraokeSession> karaokeSessions) {
-		this.karaokeSessions = karaokeSessions;
-	}
-
-	public SignUp getSignUp() {
-		return signUp;
-	}
-
-	public void setSignUp(SignUp signUp) {
-		this.signUp = signUp;
-	}
+//	public SignUp getSignUp() {
+//		return signUp;
+//	}
+//
+//	public void setSignUp(SignUp signUp) {
+//		this.signUp = signUp;
+//	}
 	
 	
 

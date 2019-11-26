@@ -11,6 +11,7 @@ import com.DooWahDoo.Main.Model.GigInfo;
 import com.DooWahDoo.Main.Model.KaraokeSession;
 import com.DooWahDoo.Main.Model.MusicLibrary;
 import com.DooWahDoo.Main.Model.UserProfile;
+import com.DooWahDoo.Main.Model.UserQueueDetails;
 import com.DooWahDoo.Main.Repo.GigInfoRepo;
 import com.DooWahDoo.Main.Repo.KaraokeRepo;
 import com.DooWahDoo.Main.Repo.MusicLibRepo;
@@ -44,20 +45,74 @@ public class KaraokeService {
 		karaokeSession.setDone(false);
 		return karaokeRepo.save(karaokeSession);
 	}
-	
-	public List<KaraokeSession> getUsers() {
-		List<KaraokeSession> sessions= karaokeRepo.findAll();
-		List<KaraokeSession> queueList= new ArrayList<>();
-		for(KaraokeSession session : sessions) {
-			if(! session.isDone()) {
-				queueList.add(session);
+
+	public List<UserQueueDetails> getUsers() {
+		List<KaraokeSession> sessions = karaokeRepo.findAll();
+		List<UserQueueDetails> queueList = new ArrayList<>();
+		for (KaraokeSession session : sessions) {
+			UserQueueDetails userQueueDetails = new UserQueueDetails();
+			if (!session.isDone() && !session.isCurrent()) {
+				userQueueDetails.setSongName(session.getMusicLibrary().getTitle());
+				userQueueDetails.setUserName(session.getUserProfile().getUserName());
+				queueList.add(userQueueDetails);
 			}
 		}
 		return queueList;
-		
+
 	}
 	
-	public List<String> setIdsFromPayload(Map<String,String> payload) {
+	public String getRemainingTime(long userId)
+	{
+		List<KaraokeSession> sessions = karaokeRepo.findAll();
+		List<UserQueueDetails> queueList = new ArrayList<>();
+		int time=0;
+		String res;
+		for(KaraokeSession session: sessions)
+		{
+			
+			if (!session.isDone() && !session.isCurrent() && session.getUserProfile().getUserId()!=userId) {
+				time=time+session.getMusicLibrary().getDuration();
+			}
+
+			
+		}
+		res=getTime(time);
+		return res;
+	}
+	
+	public String getTime(int time)
+	{
+		int hr = time/60;
+		int b = 60*hr;
+		int min = time - b;
+		String time1;
+		if(time>=60)
+		{
+		time1 = Integer.toString(hr)+" hour "+Integer.toString(min)+" minutes";
+		}
+		else
+		{
+		time1 = Integer.toString(min)+" minutes";
+		}
+		
+		return time1;
+	}
+
+	public UserQueueDetails getCurrentUser() {
+		List<KaraokeSession> sessions = karaokeRepo.findAll();
+		UserQueueDetails userQueueDetails = new UserQueueDetails();
+		for (KaraokeSession session : sessions) {
+			if (!session.isDone() && session.isCurrent()) {
+				userQueueDetails.setSongName(session.getMusicLibrary().getTitle());
+				userQueueDetails.setUserName(session.getUserProfile().getUserName());
+				break;
+			}
+		}
+		return userQueueDetails;
+
+	}
+
+	public List<String> setIdsFromPayload(Map<String, String> payload) {
 		List<String> idList = new ArrayList<>();
 		String userId = payload.get("userId");
 		String musicId = payload.get("musicId");
@@ -66,7 +121,9 @@ public class KaraokeService {
 		idList.add(musicId);
 		idList.add(gigId);
 		return idList;
-		
+
 	}
+	
+
 
 }
