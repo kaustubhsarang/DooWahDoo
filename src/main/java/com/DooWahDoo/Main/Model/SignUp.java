@@ -10,9 +10,12 @@ import javax.validation.constraints.NotNull;
 
 import org.springframework.data.annotation.Transient;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 
 @Entity
 @Table(name = "sign_up")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class SignUp {
 	
 	

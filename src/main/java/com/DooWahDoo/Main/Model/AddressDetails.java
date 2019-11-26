@@ -12,8 +12,11 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Entity
 @Table(name = "address_details")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class AddressDetails {
 	
 	@Id

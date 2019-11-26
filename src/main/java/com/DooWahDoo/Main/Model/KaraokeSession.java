@@ -12,8 +12,11 @@ import javax.persistence.Table;
 import org.hibernate.annotations.NotFound;
 import org.hibernate.annotations.NotFoundAction;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Entity
 @Table(name = "karaoke_session")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class KaraokeSession {
 	
 	@Id
