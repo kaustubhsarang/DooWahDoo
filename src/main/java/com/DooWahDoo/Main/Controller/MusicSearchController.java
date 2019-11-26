@@ -19,11 +19,6 @@ public class MusicSearchController {
 	@Autowired
 	private MusicSearchService musicSearchService;
 
-//	@GetMapping("")
-//	public String Hello(@RequestParam(value = "Artist") String artist) {
-//		return "Hello" + artist;
-//	}
-
 	@RequestMapping("/getAllMusic")
 	public List<MusicSearch> search() {
 		return musicSearchService.getAllSongs();
