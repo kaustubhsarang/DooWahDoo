@@ -37,8 +37,8 @@ public class KaraokeController {
 	}
 
 	@GetMapping("/getUserQueue")
-	public List<UserQueueDetails> getSessions() {
-		return karaokeservice.getUsers();
+	public List<KaraokeSession> getSessions() {
+		return karaokeservice.getAllUsersDetails();
 
 	}
 
@@ -63,7 +63,7 @@ public class KaraokeController {
 		return karaokeservice.getRemainingTime(userId);
 	}
 
-	@GetMapping("/sessionId/{sessionId}/getSeesionDetailsById/")
+	@GetMapping("/sessionId/{sessionId}/getSessionDetailsById")
 	public Optional<KaraokeSession> getSessionDetailsById(@PathVariable("sessionId") long sessionId) {
 		return karaokeservice.getSessionDetailsById(sessionId);
 

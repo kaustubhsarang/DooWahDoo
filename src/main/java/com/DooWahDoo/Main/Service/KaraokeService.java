@@ -55,47 +55,50 @@ public class KaraokeService {
 			if (!session.isDone() && !session.isCurrent()) {
 				userQueueDetails.setSongName(session.getMusicLibrary().getTitle());
 				userQueueDetails.setUserName(session.getUserProfile().getUserName());
+				userQueueDetails.setSessionId(session.getSessionId());
 				queueList.add(userQueueDetails);
 			}
 		}
 		return queueList;
 
 	}
-	
-	public String getRemainingTime(long userId)
-	{
+
+	public List<KaraokeSession> getAllUsersDetails() {
+		List<KaraokeSession> sessions = karaokeRepo.findAll();
+		for (KaraokeSession session : sessions) {
+			sessions.add(session);
+		}
+		return sessions;
+
+	}
+
+	public String getRemainingTime(long userId) {
 		List<KaraokeSession> sessions = karaokeRepo.findAll();
 		List<UserQueueDetails> queueList = new ArrayList<>();
-		int time=0;
+		int time = 0;
 		String res;
-		for(KaraokeSession session: sessions)
-		{
-			
-			if (!session.isDone() && !session.isCurrent() && session.getUserProfile().getUserId()!=userId) {
-				time=time+session.getMusicLibrary().getDuration();
+		for (KaraokeSession session : sessions) {
+
+			if (!session.isDone() && !session.isCurrent() && session.getUserProfile().getUserId() != userId) {
+				time = time + session.getMusicLibrary().getDuration();
 			}
 
-			
 		}
-		res=getTime(time);
+		res = getTime(time);
 		return res;
 	}
-	
-	public String getTime(int time)
-	{
-		int hr = time/60;
-		int b = 60*hr;
+
+	public String getTime(int time) {
+		int hr = time / 60;
+		int b = 60 * hr;
 		int min = time - b;
 		String time1;
-		if(time>=60)
-		{
-		time1 = Integer.toString(hr)+" hour "+Integer.toString(min)+" minutes";
+		if (time >= 60) {
+			time1 = Integer.toString(hr) + " hour " + Integer.toString(min) + " minutes";
+		} else {
+			time1 = Integer.toString(min) + " minutes";
 		}
-		else
-		{
-		time1 = Integer.toString(min)+" minutes";
-		}
-		
+
 		return time1;
 	}
 
@@ -124,7 +127,7 @@ public class KaraokeService {
 		return idList;
 
 	}
-	
+
 	public Optional<KaraokeSession> getSessionDetailsById(long sessionId) {
 		return karaokeRepo.findById(sessionId);
 	}

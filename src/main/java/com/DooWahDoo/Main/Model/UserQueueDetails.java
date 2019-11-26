@@ -4,6 +4,7 @@ public class UserQueueDetails {
 
 	public String songName;
 	public String userName;
+	public long sessionId;
 
 	public String getSongName() {
 		return songName;
@@ -19,6 +20,14 @@ public class UserQueueDetails {
 
 	public void setUserName(String userName) {
 		this.userName = userName;
+	}
+
+	public long getSessionId() {
+		return sessionId;
+	}
+
+	public void setSessionId(long sessionId) {
+		this.sessionId = sessionId;
 	}
 
 }
