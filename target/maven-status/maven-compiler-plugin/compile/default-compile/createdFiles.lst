@@ -1,4 +1,5 @@
 com\DooWahDoo\Main\Controller\MusicSearchController.class
+com\DooWahDoo\Main\Service\SendEmailService.class
 com\DooWahDoo\Main\Service\KaraokeService.class
 com\DooWahDoo\Main\Controller\KaraokeController.class
 com\DooWahDoo\Main\Model\SignUpProfileWrapper.class
@@ -6,12 +7,18 @@ com\DooWahDoo\Main\DooWahDooApplication.class
 com\DooWahDoo\Main\Service\MusicSearchService.class
 com\DooWahDoo\Main\Model\DjProfile.class
 com\DooWahDoo\Main\Repo\DjRepo.class
+com\DooWahDoo\Main\Service\SendEmailService$SMTPAuthenticator.class
 com\DooWahDoo\Main\SearchSong\MusicSearch.class
+com\DooWahDoo\Main\Model\UserQueueDetails.class
+com\DooWahDoo\Main\Service\UserRegisterService.class
 com\DooWahDoo\Main\Model\MusicLibrary.class
+com\DooWahDoo\Main\Service\UserLoginService.class
 com\DooWahDoo\Main\Controller\MusicLibController.class
 com\DooWahDoo\Main\Controller\UserRegController.class
 com\DooWahDoo\Main\Repo\GigInfoRepo.class
 com\DooWahDoo\Main\Controller\DjProfileController.class
+com\DooWahDoo\Main\Service\UserProfileService.class
+com\DooWahDoo\Main\Controller\MusicControlController.class
 com\DooWahDoo\Main\Repo\AddressDetailsRepo.class
 com\DooWahDoo\Main\Controller\GigInfoController.class
 com\DooWahDoo\Main\Repo\UserProfileRepo.class
@@ -20,7 +27,7 @@ com\DooWahDoo\Main\Controller\AddressController.class
 com\DooWahDoo\Main\Repo\MusicLibRepo.class
 com\DooWahDoo\Main\Model\SignUp.class
 com\DooWahDoo\Main\SearchSong\InitHibernateSearch.class
-com\DooWahDoo\Main\Controller\UserProfileService.class
+com\DooWahDoo\Main\Service\MusicControlService.class
 com\DooWahDoo\Main\Controller\UserProfileController.class
 com\DooWahDoo\Main\Model\GigInfo.class
 com\DooWahDoo\Main\Model\KaraokeSession.class

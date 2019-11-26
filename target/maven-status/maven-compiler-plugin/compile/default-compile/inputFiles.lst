@@ -1,30 +1,35 @@
-C:\Users\kaust\Desktop\DWD\src\main\java\com\DooWahDoo\Main\Repo\AddressDetailsRepo.java
-C:\Users\kaust\Desktop\DWD\src\main\java\com\DooWahDoo\Main\Controller\UserProfileController.java
-C:\Users\kaust\Desktop\DWD\src\main\java\com\DooWahDoo\Main\Model\SignUp.java
-C:\Users\kaust\Desktop\DWD\src\main\java\com\DooWahDoo\Main\Model\GigInfo.java
-C:\Users\kaust\Desktop\DWD\src\main\java\com\DooWahDoo\Main\SearchSong\InitHibernateSearch.java
-C:\Users\kaust\Desktop\DWD\src\main\java\com\DooWahDoo\Main\SearchSong\MusicSearch.java
-C:\Users\kaust\Desktop\DWD\src\main\java\com\DooWahDoo\Main\Controller\DjProfileController.java
-C:\Users\kaust\Desktop\DWD\src\main\java\com\DooWahDoo\Main\Controller\MusicLibController.java
-C:\Users\kaust\Desktop\DWD\src\main\java\com\DooWahDoo\Main\Model\DjProfile.java
-C:\Users\kaust\Desktop\DWD\src\main\java\com\DooWahDoo\Main\Model\UserProfile.java
-C:\Users\kaust\Desktop\DWD\src\main\java\com\DooWahDoo\Main\Service\MusicSearchService.java
-C:\Users\kaust\Desktop\DWD\src\main\java\com\DooWahDoo\Main\Controller\GigInfoController.java
-C:\Users\kaust\Desktop\DWD\src\main\java\com\DooWahDoo\Main\Controller\MusicSearchController.java
-C:\Users\kaust\Desktop\DWD\src\main\java\com\DooWahDoo\Main\Controller\UserProfileService.java
-C:\Users\kaust\Desktop\DWD\src\main\java\com\DooWahDoo\Main\Repo\DjRepo.java
-C:\Users\kaust\Desktop\DWD\src\main\java\com\DooWahDoo\Main\Repo\KaraokeRepo.java
-C:\Users\kaust\Desktop\DWD\src\main\java\com\DooWahDoo\Main\Repo\UserRegRepo.java
-C:\Users\kaust\Desktop\DWD\src\main\java\com\DooWahDoo\Main\Model\KaraokeSession.java
-C:\Users\kaust\Desktop\DWD\src\main\java\com\DooWahDoo\Main\Model\AddressDetails.java
-C:\Users\kaust\Desktop\DWD\src\main\java\com\DooWahDoo\Main\Controller\KaraokeController.java
-C:\Users\kaust\Desktop\DWD\src\main\java\com\DooWahDoo\Main\Model\MusicLibrary.java
-C:\Users\kaust\Desktop\DWD\src\main\java\com\DooWahDoo\Main\Repo\MusicLibRepo.java
-C:\Users\kaust\Desktop\DWD\src\main\java\com\DooWahDoo\Main\Service\KaraokeService.java
-C:\Users\kaust\Desktop\DWD\src\main\java\com\DooWahDoo\Main\Controller\UserRegController.java
-C:\Users\kaust\Desktop\DWD\src\main\java\com\DooWahDoo\Main\Model\UserQueueDetails.java
-C:\Users\kaust\Desktop\DWD\src\main\java\com\DooWahDoo\Main\DooWahDooApplication.java
-C:\Users\kaust\Desktop\DWD\src\main\java\com\DooWahDoo\Main\Model\SignUpProfileWrapper.java
-C:\Users\kaust\Desktop\DWD\src\main\java\com\DooWahDoo\Main\Controller\AddressController.java
-C:\Users\kaust\Desktop\DWD\src\main\java\com\DooWahDoo\Main\Repo\GigInfoRepo.java
-C:\Users\kaust\Desktop\DWD\src\main\java\com\DooWahDoo\Main\Repo\UserProfileRepo.java
+C:\Users\Abhijeet Maheshwari\Desktop\DoowahDoo Repo\Backend\DooWaaDoo\src\main\java\com\DooWahDoo\Main\Model\SignUpProfileWrapper.java
+C:\Users\Abhijeet Maheshwari\Desktop\DoowahDoo Repo\Backend\DooWaaDoo\src\main\java\com\DooWahDoo\Main\Model\DjProfile.java
+C:\Users\Abhijeet Maheshwari\Desktop\DoowahDoo Repo\Backend\DooWaaDoo\src\main\java\com\DooWahDoo\Main\Repo\MusicLibRepo.java
+C:\Users\Abhijeet Maheshwari\Desktop\DoowahDoo Repo\Backend\DooWaaDoo\src\main\java\com\DooWahDoo\Main\Repo\UserProfileRepo.java
+C:\Users\Abhijeet Maheshwari\Desktop\DoowahDoo Repo\Backend\DooWaaDoo\src\main\java\com\DooWahDoo\Main\Controller\MusicSearchController.java
+C:\Users\Abhijeet Maheshwari\Desktop\DoowahDoo Repo\Backend\DooWaaDoo\src\main\java\com\DooWahDoo\Main\Model\MusicLibrary.java
+C:\Users\Abhijeet Maheshwari\Desktop\DoowahDoo Repo\Backend\DooWaaDoo\src\main\java\com\DooWahDoo\Main\Service\UserLoginService.java
+C:\Users\Abhijeet Maheshwari\Desktop\DoowahDoo Repo\Backend\DooWaaDoo\src\main\java\com\DooWahDoo\Main\Controller\GigInfoController.java
+C:\Users\Abhijeet Maheshwari\Desktop\DoowahDoo Repo\Backend\DooWaaDoo\src\main\java\com\DooWahDoo\Main\Controller\UserRegController.java
+C:\Users\Abhijeet Maheshwari\Desktop\DoowahDoo Repo\Backend\DooWaaDoo\src\main\java\com\DooWahDoo\Main\SearchSong\MusicSearch.java
+C:\Users\Abhijeet Maheshwari\Desktop\DoowahDoo Repo\Backend\DooWaaDoo\src\main\java\com\DooWahDoo\Main\Controller\MusicLibController.java
+C:\Users\Abhijeet Maheshwari\Desktop\DoowahDoo Repo\Backend\DooWaaDoo\src\main\java\com\DooWahDoo\Main\Controller\DjProfileController.java
+C:\Users\Abhijeet Maheshwari\Desktop\DoowahDoo Repo\Backend\DooWaaDoo\src\main\java\com\DooWahDoo\Main\Service\UserRegisterService.java
+C:\Users\Abhijeet Maheshwari\Desktop\DoowahDoo Repo\Backend\DooWaaDoo\src\main\java\com\DooWahDoo\Main\DooWahDooApplication.java
+C:\Users\Abhijeet Maheshwari\Desktop\DoowahDoo Repo\Backend\DooWaaDoo\src\main\java\com\DooWahDoo\Main\Repo\GigInfoRepo.java
+C:\Users\Abhijeet Maheshwari\Desktop\DoowahDoo Repo\Backend\DooWaaDoo\src\main\java\com\DooWahDoo\Main\Controller\KaraokeController.java
+C:\Users\Abhijeet Maheshwari\Desktop\DoowahDoo Repo\Backend\DooWaaDoo\src\main\java\com\DooWahDoo\Main\Model\UserProfile.java
+C:\Users\Abhijeet Maheshwari\Desktop\DoowahDoo Repo\Backend\DooWaaDoo\src\main\java\com\DooWahDoo\Main\Repo\UserRegRepo.java
+C:\Users\Abhijeet Maheshwari\Desktop\DoowahDoo Repo\Backend\DooWaaDoo\src\main\java\com\DooWahDoo\Main\Service\MusicSearchService.java
+C:\Users\Abhijeet Maheshwari\Desktop\DoowahDoo Repo\Backend\DooWaaDoo\src\main\java\com\DooWahDoo\Main\Repo\KaraokeRepo.java
+C:\Users\Abhijeet Maheshwari\Desktop\DoowahDoo Repo\Backend\DooWaaDoo\src\main\java\com\DooWahDoo\Main\Model\AddressDetails.java
+C:\Users\Abhijeet Maheshwari\Desktop\DoowahDoo Repo\Backend\DooWaaDoo\src\main\java\com\DooWahDoo\Main\Model\UserQueueDetails.java
+C:\Users\Abhijeet Maheshwari\Desktop\DoowahDoo Repo\Backend\DooWaaDoo\src\main\java\com\DooWahDoo\Main\Repo\DjRepo.java
+C:\Users\Abhijeet Maheshwari\Desktop\DoowahDoo Repo\Backend\DooWaaDoo\src\main\java\com\DooWahDoo\Main\Service\MusicControlService.java
+C:\Users\Abhijeet Maheshwari\Desktop\DoowahDoo Repo\Backend\DooWaaDoo\src\main\java\com\DooWahDoo\Main\Service\UserProfileService.java
+C:\Users\Abhijeet Maheshwari\Desktop\DoowahDoo Repo\Backend\DooWaaDoo\src\main\java\com\DooWahDoo\Main\Model\KaraokeSession.java
+C:\Users\Abhijeet Maheshwari\Desktop\DoowahDoo Repo\Backend\DooWaaDoo\src\main\java\com\DooWahDoo\Main\Controller\AddressController.java
+C:\Users\Abhijeet Maheshwari\Desktop\DoowahDoo Repo\Backend\DooWaaDoo\src\main\java\com\DooWahDoo\Main\Controller\UserProfileController.java
+C:\Users\Abhijeet Maheshwari\Desktop\DoowahDoo Repo\Backend\DooWaaDoo\src\main\java\com\DooWahDoo\Main\Model\GigInfo.java
+C:\Users\Abhijeet Maheshwari\Desktop\DoowahDoo Repo\Backend\DooWaaDoo\src\main\java\com\DooWahDoo\Main\Service\SendEmailService.java
+C:\Users\Abhijeet Maheshwari\Desktop\DoowahDoo Repo\Backend\DooWaaDoo\src\main\java\com\DooWahDoo\Main\Repo\AddressDetailsRepo.java
+C:\Users\Abhijeet Maheshwari\Desktop\DoowahDoo Repo\Backend\DooWaaDoo\src\main\java\com\DooWahDoo\Main\Model\SignUp.java
+C:\Users\Abhijeet Maheshwari\Desktop\DoowahDoo Repo\Backend\DooWaaDoo\src\main\java\com\DooWahDoo\Main\Controller\MusicControlController.java
+C:\Users\Abhijeet Maheshwari\Desktop\DoowahDoo Repo\Backend\DooWaaDoo\src\main\java\com\DooWahDoo\Main\SearchSong\InitHibernateSearch.java
+C:\Users\Abhijeet Maheshwari\Desktop\DoowahDoo Repo\Backend\DooWaaDoo\src\main\java\com\DooWahDoo\Main\Service\KaraokeService.java

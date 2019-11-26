@@ -20,8 +20,10 @@ public class SendEmailService {
 	final static String emailSMTPserver = "smtp.gmail.com";
 	final static String emailServerPort = "465";
 
-	public String sendEmail(String receiverEmailID, String Subject, String Body) {
+	private final String SUBJECT_TEXT = "Welcome to DooWahDoo";
 
+	public String sendEmail(String receiverEmailID, String firstName) {
+		final String BODY_TEXT = setEmailBody(firstName);
 		Properties props = new Properties();
 		props.put("mail.smtp.user", senderEmailID);
 		props.put("mail.smtp.host", emailSMTPserver);
@@ -36,8 +38,8 @@ public class SendEmailService {
 			Authenticator auth = new SMTPAuthenticator();
 			Session session = Session.getInstance(props, auth);
 			MimeMessage msg = new MimeMessage(session);
-			msg.setText(Body);
-			msg.setSubject(Subject);
+			msg.setText(BODY_TEXT);
+			msg.setSubject(SUBJECT_TEXT);
 			msg.setFrom(new InternetAddress(senderEmailID));
 			msg.addRecipient(Message.RecipientType.TO, new InternetAddress(receiverEmailID));
 			Transport.send(msg);
@@ -50,6 +52,14 @@ public class SendEmailService {
 			return "Fail";
 		}
 
+	}
+
+	private String setEmailBody(String firstName) {
+		return "Welcome " + firstName + "!\r\n" + "\r\n"
+				+ "We are so excited to have you. As you know, our mission is to help you have fun at the Karaoke night by helping you flaunt your hidden talent in front of your friends. Yay!\r\n"
+				+ "\r\n"
+				+ "You have a lot of options to sing from our wide variety of music database with amazing KJ/DJ to accompany you. \r\n"
+				+ "\r\n" + "Why to wait, let's sing some songs together!\r\n" + "\r\n" + "Love,\r\n" + "Team DooWahDoo";
 	}
 
 	public static class SMTPAuthenticator extends javax.mail.Authenticator {

@@ -21,15 +21,12 @@ public class UserRegisterService {
 	@Autowired
 	private SendEmailService emailService;
 
-	private final String BODY_TEXT = "Body";
-	private final String SUBJECT_TEXT = "Subject";
-
 	public SignUp createUser(SignUpProfileWrapper signUpProfileWrapper) {
 		UserProfile userProfile = signUpProfileWrapper.getUserProfile();
 		SignUp signUp = signUpProfileWrapper.getSignUp();
 		userProfileRepo.save(userProfile);
 		signUp.setUserProfile(userProfile);
-		emailService.sendEmail(signUp.getEmailId(), BODY_TEXT, SUBJECT_TEXT);
+		emailService.sendEmail(signUp.getEmailId(),userProfile.getFirstName());
 		return userRegRepo.save(signUp);
 	}
 
