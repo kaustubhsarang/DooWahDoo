@@ -54,7 +54,7 @@ public class KaraokeService {
 			UserQueueDetails userQueueDetails = new UserQueueDetails();
 			if (!session.isDone() && !session.isCurrent()) {
 				userQueueDetails.setSongName(session.getMusicLibrary().getTitle());
-				userQueueDetails.setUserName(session.getUserProfile().getUserName());
+				userQueueDetails.setUserName(session.getUserProfile().getFirstName());
 				userQueueDetails.setSessionId(session.getSessionId());
 				queueList.add(userQueueDetails);
 			}
@@ -108,7 +108,7 @@ public class KaraokeService {
 		for (KaraokeSession session : sessions) {
 			if (!session.isDone() && session.isCurrent()) {
 				userQueueDetails.setSongName(session.getMusicLibrary().getTitle());
-				userQueueDetails.setUserName(session.getUserProfile().getUserName());
+				userQueueDetails.setUserName(session.getUserProfile().getFirstName());
 				break;
 			}
 		}

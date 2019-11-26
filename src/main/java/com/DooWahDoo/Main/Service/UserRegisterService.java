@@ -21,8 +21,8 @@ public class UserRegisterService {
 	@Autowired
 	private SendEmailService emailService;
 
-	private final String BODY_TEXT = "";
-	private final String SUBJECT_TEXT = "";
+	private final String BODY_TEXT = "Body";
+	private final String SUBJECT_TEXT = "Subject";
 
 	public SignUp createUser(SignUpProfileWrapper signUpProfileWrapper) {
 		UserProfile userProfile = signUpProfileWrapper.getUserProfile();
