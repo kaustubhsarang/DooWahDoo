@@ -13,8 +13,13 @@ import javax.validation.constraints.NotNull;
 import org.hibernate.annotations.NotFound;
 import org.hibernate.annotations.NotFoundAction;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+
+
 @Entity
 @Table(name = "gig_info")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class GigInfo {
 	
 	@Id
