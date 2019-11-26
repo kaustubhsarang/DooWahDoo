@@ -26,7 +26,6 @@ com\DooWahDoo\Main\Model\UserProfile.class
 com\DooWahDoo\Main\Controller\AddressController.class
 com\DooWahDoo\Main\Repo\MusicLibRepo.class
 com\DooWahDoo\Main\Model\SignUp.class
-com\DooWahDoo\Main\SearchSong\InitHibernateSearch.class
 com\DooWahDoo\Main\Service\MusicControlService.class
 com\DooWahDoo\Main\Controller\UserProfileController.class
 com\DooWahDoo\Main\Model\GigInfo.class
