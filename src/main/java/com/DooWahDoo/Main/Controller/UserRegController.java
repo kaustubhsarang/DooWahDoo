@@ -29,8 +29,7 @@ public class UserRegController {
 	private UserRegisterService userRegisterService;
 
 	@PostMapping("/RegisterUser")
-//   public SignUp createEmployee(@Valid @RequestBody SignUp signUp) {
-	public SignUp createEmployee(@Valid @RequestBody SignUpProfileWrapper signUpProfileWrapper) {
+	public SignUp createUser(@Valid @RequestBody SignUpProfileWrapper signUpProfileWrapper) {
 		return userRegisterService.createUser(signUpProfileWrapper);
 	}
 
