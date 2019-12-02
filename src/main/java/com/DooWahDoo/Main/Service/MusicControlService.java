@@ -17,13 +17,20 @@ public class MusicControlService {
 	public String playSong(long sessionId) {
 		boolean flag = false;
 		List<KaraokeSession> sessionList = karaokeRepo.findAll();
+		int i=0;
 		for (KaraokeSession session : sessionList) {
 			if (session.getSessionId() == sessionId) {
-				session.setCurrent(true);
+				session.setCurrent(false);
+				session.setDone(true);				
 				karaokeRepo.save(session);
+				KaraokeSession nextSession = sessionList.get(i+1);
+				nextSession.setCurrent(true);
+				nextSession.setDone(false);
+				karaokeRepo.save(nextSession);
 				flag = true;
 				break;
 			}
+			i++;
 		}
 		if (flag) {
 			return "Success";
