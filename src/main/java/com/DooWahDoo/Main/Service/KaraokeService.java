@@ -79,7 +79,7 @@ public class KaraokeService {
 		int time = 0;
 		HashMap<String, Integer> res;
 		for (KaraokeSession session : sessions) {
-
+//check
 //			if (!session.isDone() && !session.isCurrent() && session.getUserProfile().getUserId() != userId) {
 			if (!session.isDone() && !session.isCurrent()) {
 				if(session.getUserProfile().getUserId() == userId)
