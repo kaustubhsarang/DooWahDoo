@@ -1,5 +1,6 @@
 package com.DooWahDoo.Main.Controller;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -58,7 +59,7 @@ public class KaraokeController {
 	}
 
 	@GetMapping("/gig/{gigId}/{userId}/getTimer")
-	public String Timer(@PathVariable("userId") long userId) {
+	public Map<String, Integer> Timer(@PathVariable("userId") long userId) {
 
 		return karaokeservice.getRemainingTime(userId);
 	}

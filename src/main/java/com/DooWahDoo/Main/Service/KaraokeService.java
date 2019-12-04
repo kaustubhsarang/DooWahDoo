@@ -1,9 +1,10 @@
 package com.DooWahDoo.Main.Service;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
+import java.util.Optional;import javax.persistence.criteria.CriteriaBuilder.In;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -72,14 +73,17 @@ public class KaraokeService {
 
 	}
 
-	public String getRemainingTime(long userId) {
+	public Map<String, Integer> getRemainingTime(long userId) {
 		List<KaraokeSession> sessions = karaokeRepo.findAll();
 		List<UserQueueDetails> queueList = new ArrayList<>();
 		int time = 0;
-		String res;
+		HashMap<String, Integer> res;
 		for (KaraokeSession session : sessions) {
 
-			if (!session.isDone() && !session.isCurrent() && session.getUserProfile().getUserId() != userId) {
+//			if (!session.isDone() && !session.isCurrent() && session.getUserProfile().getUserId() != userId) {
+			if (!session.isDone() && !session.isCurrent()) {
+				if(session.getUserProfile().getUserId() == userId)
+					break;
 				time = time + session.getMusicLibrary().getDuration();
 			}
 
@@ -88,18 +92,28 @@ public class KaraokeService {
 		return res;
 	}
 
-	public String getTime(int time) {
-		int hr = time / 60;
-		int b = 60 * hr;
-		int min = time - b;
-		String time1;
-		if (time >= 60) {
-			time1 = Integer.toString(hr) + " hour " + Integer.toString(min) + " minutes";
-		} else {
-			time1 = Integer.toString(min) + " minutes";
-		}
+	public HashMap<String, Integer> getTime(int time) {
+//		int hr = time / 60;
+//		int b = 60 * hr;
+//		int min = time - b;
+//		String time1;
+//		if (time >= 60) {
+//			time1 = Integer.toString(hr) + " hour " + Integer.toString(min) + " minutes";
+//		} else {
+//			time1 = Integer.toString(min) + " minutes";
+//		}
+		int hr = time/3600;
+		int a = 3600*hr;
+		int b = time-a;
+		int min = b/60;
+		int c = 60*min;
+		int sec = b-c;
+		HashMap<String, Integer> result = new HashMap<String, Integer>();
+		result.put("HH", hr);
+		result.put("MM", min);
+		result.put("SS", sec);
 
-		return time1;
+		return result;
 	}
 
 	public UserQueueDetails getCurrentUser() {
