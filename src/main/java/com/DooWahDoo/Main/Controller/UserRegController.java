@@ -29,7 +29,7 @@ public class UserRegController {
 	private UserRegisterService userRegisterService;
 
 	@PostMapping("/RegisterUser")
-	public SignUp createUser(@Valid @RequestBody SignUpProfileWrapper signUpProfileWrapper) {
+	public Map<String, Object> createUser(@Valid @RequestBody SignUpProfileWrapper signUpProfileWrapper) {
 		return userRegisterService.createUser(signUpProfileWrapper);
 	}
 
