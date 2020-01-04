@@ -54,14 +54,14 @@ public class MusicLibController {
 		 while (rowIterator.hasNext()) {
 	            Row row = rowIterator.next();
 	            i++;
-	            if(i==20000)
+	            if(i==500)
 	            	break;
 	            musicLibrary = new MusicLibrary();
 	            musicLibrary.setArtist(dataFormatter.formatCellValue(row.getCell(0)));
 	            musicLibrary.setDescription(" ");
 	            musicLibrary.setDuration(200);
 	            musicLibrary.setGenre(dataFormatter.formatCellValue(row.getCell(3)));
-	            musicLibrary.setTitle(dataFormatter.formatCellValue(row.getCell(4)));
+	            musicLibrary.setTitle(dataFormatter.formatCellValue(row.getCell(4)));	    
 	            //musicLibRepo.save(musicLibrary);
 	            arr.add(musicLibrary);
 	            

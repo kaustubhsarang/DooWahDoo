@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;import javax.persistence.criteria.CriteriaBuilder.In;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -57,6 +57,7 @@ public class KaraokeService {
 				userQueueDetails.setSongName(session.getMusicLibrary().getTitle());
 				userQueueDetails.setUserName(session.getUserProfile().getFirstName());
 				userQueueDetails.setSessionId(session.getSessionId());
+				userQueueDetails.setUserId(session.getUserProfile().getUserId());
 				queueList.add(userQueueDetails);
 			}
 		}

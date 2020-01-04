@@ -18,6 +18,12 @@ public class UserLoginService {
 	public Map<String, Object> getLoginDetails(SignUp signUp) {
 		Optional<SignUp> user = userRegRepo.findById(signUp.getEmailId());
 		Map<String, Object> result = new HashMap<>();
+		if(user.get().getEmailId()=="" || user.get().getPassword()=="")
+		{
+			result.put("Status", "Wrong Password");
+			result.put("userInfo", null);
+			return result;
+		}
 		if (user.isPresent()) {
 			if (user.get().getPassword().equals(signUp.getPassword())) {
 				result.put("Status", "Success");
